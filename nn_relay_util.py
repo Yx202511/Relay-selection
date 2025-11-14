@@ -7,19 +7,6 @@ import time
 import threading
 import math
 from multiprocessing.pool import ThreadPool
-'''
-这段代码定义了一些用于生成和操作与中继选择相关的数据的函数。
-ExpConfig类定义了整个代码中使用的一些参数，例如中继数量、子载波数量和其他系统特定值。
-Solution类用于表示给定一组中继和子载波的中继选择问题的解决方案。
-get_max_values函数接受一个子载波值矩阵，并返回所有中继中每个子载波的最大值。
-brute_force2函数接受相同的矩阵，并返回一个二进制值列表，指示应选择哪些中继以实现最大子载波值。
-generate_G函数使用指数分布生成子载波值矩阵，然后应用subcarrier_min函数选择所有中继中每个子载波的最小值。
-然后对结果矩阵进行归一化和排序，以生成每个子载波的唯一索引。
-get_data函数使用generate_G和brute_force2函数生成子载波索引和相应的中继选择的数据集。
-get_data_max_values函数生成类似的数据集，但使用get_max_values函数而不是brute_force2函数生成标签。
-get_outage_prob函数计算给定一组子载波值和中继选择的中断发生概率。
-总的来说，这段代码提供了一个框架，用于生成和分析与无线通信网络中继选择相关的数据集。
-'''
 
 class ExpConfig:
     M = 8
